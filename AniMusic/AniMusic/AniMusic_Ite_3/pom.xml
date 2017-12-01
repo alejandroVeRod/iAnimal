@@ -7,4 +7,5 @@
   </parent>
   <artifactId>AniMusic_Ite_3</artifactId>
   <name>Gestión de Canciones/Albumes</name>
+  <version>1.0.0</version>
 </project>

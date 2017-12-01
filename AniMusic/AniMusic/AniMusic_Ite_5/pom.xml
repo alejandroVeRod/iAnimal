@@ -7,4 +7,5 @@
   </parent>
   <artifactId>AniMusic_Ite_5</artifactId>
   <name>Reproductor de música</name>
+  <version>2.0.0</version>
 </project>

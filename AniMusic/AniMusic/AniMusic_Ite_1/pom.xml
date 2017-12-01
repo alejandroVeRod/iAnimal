@@ -7,4 +7,5 @@
   </parent>
   <artifactId>AniMusic_Ite_1</artifactId>
   <name>Login y Registrar Usuario</name>
+  <version>0.1.0</version>
 </project>
