@@ -7,5 +7,6 @@
   <name>AniMusic</name>
   <modules>
   	<module>AniMusic_Ite_1</module>
+  	<module>AniMusic_Ite_2</module>
   </modules>
 </project>
