@@ -5,10 +5,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.HeadlessException;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import Dominio.Usuario;
+
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class IU_Login {
 
@@ -18,7 +27,7 @@ public class IU_Login {
 	private JTextField txt_email;
 	private JLabel lblemail;
 	private JLabel lblNewLabel;
-	private JTextField txt_;
+	private JTextField txt_pass;
 	private JButton btnNewButton;
 
 	/**
@@ -76,13 +85,25 @@ public class IU_Login {
 		lblNewLabel.setBounds(29, 253, 63, 14);
 		panel.add(lblNewLabel);
 		
-		txt_ = new JTextField();
-		txt_.setBounds(102, 250, 86, 20);
-		panel.add(txt_);
-		txt_.setColumns(10);
+		txt_pass = new JTextField();
+		txt_pass.setBounds(102, 250, 86, 20);
+		panel.add(txt_pass);
+		txt_pass.setColumns(10);
 		
 		btnNewButton = new JButton("Iniciar Sesion");
+		btnNewButton.addActionListener(new BtnNewButtonActionListener());
 		btnNewButton.setBounds(241, 223, 119, 23);
 		panel.add(btnNewButton);
+	}
+	private class BtnNewButtonActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			Usuario user=new Usuario(txt_email.getText(),txt_pass.getText());
+			System.out.print(user.getEmail());
+				if(user.getGestor().AutenticarUsuario(user)==true) {
+					JOptionPane.showMessageDialog(null,"¡Bienvenido! "+txt_email.getText());
+				}
+			
+			
+		}
 	}
 }

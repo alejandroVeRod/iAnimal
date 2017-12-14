@@ -1,19 +1,46 @@
 package Dominio;
 
+import Persistencia.GestorUsuarios;
+
 public class Usuario {
 
 	private String nombre;
 	private String apellidos;
 	private String email;
+	private String password;
 	private String fechaNacimiento;
 	private String DNI;
-	public Usuario(String nombre, String apellidos, String email, String fechaNacimiento, String dNI) {
-		super();
+	private GestorUsuarios gestor;
+	public Usuario(String email,String password) {
+		this.email=email;
+		this.password=password;
+		this.gestor=new GestorUsuarios();
+	}
+
+	public Usuario(String nombre, String apellidos, String email,String password, String fechaNacimiento, String dNI) {
+		
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
+		this.password=password;
 		this.fechaNacimiento = fechaNacimiento;
 		DNI = dNI;
+	}
+	
+	public GestorUsuarios getGestor() {
+		return gestor;
+	}
+	public void setGestor(GestorUsuarios gestor) {
+		this.gestor = gestor;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Usuario() {
+		this.gestor=new GestorUsuarios();
 	}
 	public String getNombre() {
 		return nombre;
