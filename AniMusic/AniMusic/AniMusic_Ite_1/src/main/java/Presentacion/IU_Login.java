@@ -157,8 +157,8 @@ public class IU_Login {
 	private class BtnNewButtonActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Usuario user=new Usuario(txt_email.getText(),txt_pass.getText());
-			System.out.print(user.getEmail());
-				if(user.getGestor().AutenticarUsuario(user)==true) {
+			
+				if((user.getGestor().AutenticarUsuario(user))==true) {
 					JOptionPane.showMessageDialog(null,"¡Bienvenido! "+txt_email.getText());
 				}
 			
@@ -168,7 +168,7 @@ public class IU_Login {
 	private class BtnNewButton_1ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Usuario user=new Usuario(txt_nuevoEmail.getText(),txt_nuevoPassword.getText(),txt_nuevoNombre.getText(),txt_nuevoApellido.getText());
-			
+			user.getGestor().AñadirUsuario(user);
 		}
 	}
 }

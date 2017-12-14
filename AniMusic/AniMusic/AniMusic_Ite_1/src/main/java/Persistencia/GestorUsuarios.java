@@ -27,21 +27,22 @@ public class GestorUsuarios {
 	public void EliminarUsuario(Usuario user) {
 	
 	}
-	public boolean AutenticarUsuario(Usuario user)  {
+	public boolean AutenticarUsuario(Usuario user)   {
 		String pass = null,email = null;
 		try {
-			File f=new File("/AniMusic_Ite_1/src/main/java/Persistencia/BBDD.txt");
+			File f=new File("BBDD.txt");
 			Scanner read = new Scanner(f);
 			while(read.hasNextLine()) {
 				email=read.next();
-				pass=read.nextLine();
+				
+				pass=read.next();
 			}
-			
-		}catch(FileNotFoundException e) {
-			System.out.println("El archivo no existe...");
+			read.close();
+		}catch (Exception ex){
+			System.out.print("POLLA");
 		}
 		
-		if((user.getEmail()==email && (user.getPassword()==pass))){
+		if((user.getEmail().equals(email)) && (user.getPassword().equals(pass))){
 			return true;
 		}else {
 			return false;
