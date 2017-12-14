@@ -17,14 +17,13 @@ public class Usuario {
 		this.gestor=new GestorUsuarios();
 	}
 
-	public Usuario(String nombre, String apellidos, String email,String password, String fechaNacimiento, String dNI) {
+	public Usuario(String nombre, String apellidos, String email,String password) {
 		
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
 		this.password=password;
-		this.fechaNacimiento = fechaNacimiento;
-		DNI = dNI;
+
 	}
 	
 	public GestorUsuarios getGestor() {

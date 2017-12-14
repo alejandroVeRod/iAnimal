@@ -30,7 +30,7 @@ public class GestorUsuarios {
 	public boolean AutenticarUsuario(Usuario user)  {
 		String pass = null,email = null;
 		try {
-			File f=new File("/AniMusic_Ite_1/src/main/java/Persistencia/BBDD2.txt");
+			File f=new File("/AniMusic_Ite_1/src/main/java/Persistencia/BBDD.txt");
 			Scanner read = new Scanner(f);
 			while(read.hasNextLine()) {
 				email=read.next();
