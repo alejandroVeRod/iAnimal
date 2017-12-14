@@ -7,7 +7,7 @@ public class Cancion {
 	private String colaboracion;
 	private double precio;
 	
-	public Cancion(int idCancion, String nombre, double donacion, String album, String album, double precio) {
+	public Cancion(int idCancion, String nombre, double donacion, String album, String colaboracion, double precio) {
 		this.idCancion=idCancion;
 		this.nombre=nombre;
 		this.donacion=donacion;
@@ -32,21 +32,21 @@ public class Cancion {
 		return colaboracion;
 	}
 	public double getPrecio() {
-		return Nombre;
+		return precio;
 	}
 	public void setIdCancion(int nuevaCancion) {
-		idcancion=nuevaCancion;
+		idCancion=nuevaCancion;
 	}
-	public void setNombre(int nuevoNombre) {
+	public void setNombre(String nuevoNombre) {
 		nombre=nuevoNombre;
 	}
 	public void setDonacion(int nuevaDonacion) {
 		donacion=nuevaDonacion;
 	}
-	public void setAlbum(int nuevoAlbum) {
+	public void setAlbum(String nuevoAlbum) {
 		album=nuevoAlbum;
 	}
-	public void setColaboracion(int nuevaColaboracion) {
+	public void setColaboracion(String nuevaColaboracion) {
 		colaboracion=nuevaColaboracion;
 	}
 	public void setPrecio(int nuevoPrecio) {
