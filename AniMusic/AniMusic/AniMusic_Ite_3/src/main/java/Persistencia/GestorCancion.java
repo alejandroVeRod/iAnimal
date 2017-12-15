@@ -12,6 +12,9 @@ public class GestorCancion {
 	public void setLista_cancion(Cancion[] lista_cancion) {
 		this.lista_cancion = lista_cancion;
 	}
+	public void verTodasCanciones() {
+		
+	}
 	public void verCancion(Cancion song) {
 		
 	}

@@ -1,5 +1,6 @@
 package Dominio;
 
+import Persistencia.GestorAlbum;
 
 public class Album {
 	
@@ -45,6 +46,10 @@ public class Album {
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+	public void leerCanciones() {
+		GestorAlbum gAlb = new GestorAlbum();
+		gAlb.verTodosAlbumes();
 	}
 	
 }
