@@ -10,12 +10,13 @@ public class Usuario {
 	private String password;
 	private String fechaNacimiento;
 	private String DNI;
+	
 	private GestorUsuarios gestor;
 	
 	public Usuario(String email,String password) {
-		this.email=email;
-		this.password=password;
-		this.gestor=new GestorUsuarios();
+		this.email = email;
+		this.password = password;
+		this.gestor = new GestorUsuarios();
 	}
 
 	public Usuario(String nombre, String apellidos, String email,String password) {
@@ -23,8 +24,7 @@ public class Usuario {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.password=password;
-
+		this.password = password;
 	}
 	
 	public GestorUsuarios getGestor() {
@@ -70,7 +70,12 @@ public class Usuario {
 		return DNI;
 	}
 	public void setDNI(String dNI) {
-		DNI = dNI;
+		this.DNI = dNI;
 	}
 	
+	public void verUsuario(Usuario user) {
+		GestorUsuarios gus = new GestorUsuarios();
+		gus.autenticarUsuario(user);
+	}	
 }
+
