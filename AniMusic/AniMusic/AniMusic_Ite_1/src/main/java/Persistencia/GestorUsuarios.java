@@ -17,17 +17,19 @@ public class GestorUsuarios {
 	public void setLista_usuario(Usuario[] lista_usuario) {
 		this.lista_usuario = lista_usuario;
 	}
-	
-	public void AñadirUsuario(Usuario user) {
+	public void verUsuario(Usuario user) {
 		
 	}
-	public void ModificarUsuario(Usuario user) {
+	public void anadirUsuario(Usuario user) {
 		
 	}
-	public void EliminarUsuario(Usuario user) {
+	public void modificarUsuario(Usuario user) {
+		
+	}
+	public void eliminarUsuario(Usuario user) {
 	
 	}
-	public boolean AutenticarUsuario(Usuario user)   {
+	public boolean autenticarUsuario(Usuario user)   {
 		String pass = null,email = null;
 		try {
 			File f=new File("BBDD.txt");
