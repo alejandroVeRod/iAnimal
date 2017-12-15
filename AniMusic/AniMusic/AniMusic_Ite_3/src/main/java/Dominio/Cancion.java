@@ -1,5 +1,8 @@
 package Dominio;
 
+import Persistencia.GestorAlbum;
+import Persistencia.GestorCancion;
+
 public class Cancion {
 	
 	private String idCancion;
@@ -64,6 +67,27 @@ public class Cancion {
 
 	public void setDuracion(String duracion) {
 		this.duracion = duracion;
+	}
+	/*********************** METODOS DE GESTIÓN DE CANCIONES ****************************/
+	public void leerCanciones() {
+		GestorCancion gCan = new GestorCancion();
+		gCan.verTodasCanciones();
+	}
+	public void leerCancion(Cancion song) {
+		GestorCancion gCan = new GestorCancion();
+		gCan.verCancion(song);
+	}
+	public void crearCancion(Cancion song) {
+		GestorCancion gCan = new GestorCancion();
+		gCan.anadirCancion(song);
+	}
+	public void borrarCancion(Cancion song) {
+		GestorCancion gCan = new GestorCancion();
+		gCan.eliminarCancion(song);
+	}
+	public void cambiarCancion(Cancion song) {
+		GestorCancion gCan = new GestorCancion();
+		gCan.modificarCancion(song);
 	}
 	
 }

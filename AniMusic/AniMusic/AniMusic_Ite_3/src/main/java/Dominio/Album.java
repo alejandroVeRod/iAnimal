@@ -47,9 +47,26 @@ public class Album {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public void leerCanciones() {
+	/*********************** METODOS DE GESTIÓN DE ALBUMES ****************************/
+	public void leerAlbumes() {
 		GestorAlbum gAlb = new GestorAlbum();
 		gAlb.verTodosAlbumes();
+	}
+	public void leerAlbun(Album alb) {
+		GestorAlbum gAlb = new GestorAlbum();
+		gAlb.verAlbum(alb);
+	}
+	public void crearAlbum(Album alb) {
+		GestorAlbum gAlb = new GestorAlbum();
+		gAlb.anadirAlbum(alb);
+	}
+	public void borrarAlbum(Album alb) {
+		GestorAlbum gAlb = new GestorAlbum();
+		gAlb.eliminarAlbum(alb);
+	}
+	public void cambiarAlbum(Album alb) {
+		GestorAlbum gAlb = new GestorAlbum();
+		gAlb.modificarAlbum(alb);	
 	}
 	
 }

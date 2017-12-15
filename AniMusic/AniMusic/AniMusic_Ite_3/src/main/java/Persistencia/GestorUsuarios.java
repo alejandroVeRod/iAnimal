@@ -1,9 +1,5 @@
 package Persistencia;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import Dominio.Usuario;
 
 public class GestorUsuarios {
@@ -29,26 +25,8 @@ public class GestorUsuarios {
 	public void eliminarUsuario(Usuario user) {
 	
 	}
-	public boolean autenticarUsuario(Usuario user)   {
-		String pass = null,email = null;
-		try {
-			File f=new File("BBDD.txt");
-			Scanner read = new Scanner(f);
-			while(read.hasNextLine()) {
-				email=read.next();
-				
-				pass=read.next();
-			}
-			read.close();
-		}catch (Exception ex){
-			System.out.print("POLLA");
-		}
-		
-		if((user.getEmail().equals(email)) && (user.getPassword().equals(pass))){
-			return true;
-		}else {
-			return false;
-		}
+	public void autenticarUsuario(Usuario user) {
+
 	}
 	
 }
