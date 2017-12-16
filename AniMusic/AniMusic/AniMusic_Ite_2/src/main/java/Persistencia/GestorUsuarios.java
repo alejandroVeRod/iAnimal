@@ -2,6 +2,9 @@ package Persistencia;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import Dominio.Usuario;
@@ -20,8 +23,21 @@ public class GestorUsuarios {
 	public void verUsuario(Usuario user) {
 		
 	}
-	public void anadirUsuario(Usuario user) {
-		
+	public boolean anadirUsuario(Usuario user) {
+		//No es funcional, ya que implementaremos más adelante una bbdd
+		try {
+			FileWriter fw=new FileWriter("BBDD.txt",true);
+			PrintWriter pw=new PrintWriter(fw);
+			pw.println(user.getEmail());
+			pw.println(user.getPassword());
+			pw.println(user.getNombre());
+			pw.println(user.getApellidos());
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		return true;
 	}
 	public void modificarUsuario(Usuario user) {
 		
@@ -36,7 +52,6 @@ public class GestorUsuarios {
 			Scanner read = new Scanner(f);
 			while(read.hasNextLine()) {
 				email=read.next();
-				
 				pass=read.next();
 			}
 			read.close();

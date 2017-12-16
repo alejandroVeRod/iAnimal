@@ -18,12 +18,11 @@ public class Usuario {
 	}
 
 	public Usuario(String nombre, String apellidos, String email,String password) {
-		
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
 		this.password=password;
-
+		this.gestor=new GestorUsuarios();
 	}
 	
 	public GestorUsuarios getGestor() {

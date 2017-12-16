@@ -25,6 +25,7 @@ public class Usuario {
 		this.apellidos = apellidos;
 		this.email = email;
 		this.password = password;
+		this.gestor=new GestorUsuarios();
 	}
 	
 	public GestorUsuarios getGestor() {

@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class IU_Login {
 
@@ -43,6 +44,8 @@ public class IU_Login {
 	private JTextField txt_nuevoPassword;
 	private JTextField txt_nuevoNombre;
 	private JTextField txt_nuevoApellido;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -91,12 +94,12 @@ public class IU_Login {
 		
 		lblemail = new JLabel("email");
 		lblemail.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblemail.setBounds(46, 206, 46, 14);
+		lblemail.setBounds(29, 206, 63, 14);
 		panel.add(lblemail);
 		
 		lblNewLabel = new JLabel("Contrase\u00F1a");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setBounds(29, 253, 63, 14);
+		lblNewLabel.setBounds(10, 253, 82, 14);
 		panel.add(lblNewLabel);
 		
 		txt_pass = new JTextField();
@@ -111,19 +114,19 @@ public class IU_Login {
 		
 		btn_Registrarse = new JButton("Registrarse");
 		btn_Registrarse.addActionListener(new BtnNewButton_1ActionListener());
-		btn_Registrarse.setBounds(102, 340, 89, 23);
+		btn_Registrarse.setBounds(88, 341, 105, 23);
 		panel.add(btn_Registrarse);
 		
 		lblnoTienesCuenta = new JLabel("\u00BFNo tienes cuenta?");
-		lblnoTienesCuenta.setBounds(78, 315, 110, 14);
+		lblnoTienesCuenta.setBounds(78, 315, 178, 14);
 		panel.add(lblnoTienesCuenta);
 		
 		lblNewLabel_1 = new JLabel("Nueva Contrase\u00F1a:");
-		lblNewLabel_1.setBounds(10, 420, 94, 14);
+		lblNewLabel_1.setBounds(10, 420, 112, 14);
 		panel.add(lblNewLabel_1);
 		
 		label = new JLabel("Nuevo email:");
-		label.setBounds(41, 395, 63, 14);
+		label.setBounds(10, 395, 94, 14);
 		panel.add(label);
 		
 		lblNombre = new JLabel("Nombre:");
@@ -153,13 +156,21 @@ public class IU_Login {
 		txt_nuevoApellido.setBounds(286, 417, 86, 20);
 		panel.add(txt_nuevoApellido);
 		txt_nuevoApellido.setColumns(10);
+		
+		btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(10, 326, 27, -15);
+		panel.add(btnNewButton);
+		
+		btnNewButton_1 = new JButton("Registrarse con Facebook");
+		btnNewButton_1.setBounds(78, 490, 188, 29);
+		panel.add(btnNewButton_1);
 	}
 	private class BtnNewButtonActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Usuario user=new Usuario(txt_email.getText(),txt_pass.getText());
 			
 				if((user.getGestor().autenticarUsuario(user))==true) {
-					JOptionPane.showMessageDialog(null,"¡Bienvenido! "+txt_email.getText());
+					JOptionPane.showMessageDialog(null,"Bienvenido! "+txt_email.getText());
 				}
 			
 			
@@ -168,7 +179,9 @@ public class IU_Login {
 	private class BtnNewButton_1ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Usuario user=new Usuario(txt_nuevoEmail.getText(),txt_nuevoPassword.getText(),txt_nuevoNombre.getText(),txt_nuevoApellido.getText());
-			user.getGestor().anadirUsuario(user);
+			if(user.getGestor().anadirUsuario(user)) {
+				JOptionPane.showMessageDialog(null,"Enhorabuena, te has registrado con Ã©xito "+txt_email.getText());
+			}
 		}
 	}
 }
