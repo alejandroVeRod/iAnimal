@@ -9,6 +9,7 @@ import Dominio.Album;
 public class GestorAlbum {
 	
 	private Album[] lista_album;
+	private PrintWriter pw;
 
 	public Album[] getLista_album() {
 		return lista_album;
@@ -27,7 +28,7 @@ public class GestorAlbum {
 	public boolean anadirAlbum(Album alb) {
 		try {
 			FileWriter fw = new FileWriter("BBDD.txt",true);
-			PrintWriter pw = new PrintWriter (fw);
+			pw = new PrintWriter (fw);
 			pw.println(alb.getIdAlbum());
 			pw.println(alb.getNombre());
 			pw.println(alb.getArtista());
