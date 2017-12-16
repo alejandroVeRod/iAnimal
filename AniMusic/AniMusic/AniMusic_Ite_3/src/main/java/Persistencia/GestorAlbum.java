@@ -1,5 +1,9 @@
 package Persistencia;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import Dominio.Album;
 
 public class GestorAlbum {
@@ -20,7 +24,19 @@ public class GestorAlbum {
 	public void verAlbum(Album alb) {
 		
 	}
-	public void anadirAlbum(Album alb) {
+	public boolean anadirAlbum(Album alb) {
+		try {
+			FileWriter fw = new FileWriter("BBDD.txt",true);
+			PrintWriter pw = new PrintWriter (fw);
+			pw.println(alb.getIdAlbum());
+			pw.println(alb.getNombre());
+			pw.println(alb.getArtista());
+			pw.println(alb.getFecha());
+			return true;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
 		
 	}
 	public void modificarAlbum(Album alb) {
