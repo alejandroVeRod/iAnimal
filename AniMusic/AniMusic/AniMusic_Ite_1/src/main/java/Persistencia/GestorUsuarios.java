@@ -57,7 +57,7 @@ public class GestorUsuarios {
 			}
 			read.close();
 		}catch (Exception ex){
-			System.out.print("POLLA");
+			ex.printStackTrace();
 		}
 		
 		if((user.getEmail().equals(email)) && (user.getPassword().equals(pass))){
