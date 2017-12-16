@@ -1,7 +1,6 @@
 package Persistencia;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,6 +31,7 @@ public class GestorUsuarios {
 			pw.println(user.getPassword());
 			pw.println(user.getNombre());
 			pw.println(user.getApellidos());
+			pw.close();
 			return true;
 			
 		} catch (IOException e) {

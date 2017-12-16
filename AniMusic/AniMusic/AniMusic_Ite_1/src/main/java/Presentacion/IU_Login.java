@@ -8,8 +8,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.HeadlessException;
-
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -18,10 +16,7 @@ import Dominio.Usuario;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.ImageIcon;
+
 
 public class IU_Login {
 
@@ -35,7 +30,6 @@ public class IU_Login {
 	private JButton btn_IniciarSesion;
 	private JButton btn_Registrarse;
 	private JLabel lblnoTienesCuenta;
-	private JPanel pnl_nuevoUsuario;
 	private JLabel lblNewLabel_1;
 	private JLabel label;
 	private JLabel lblNombre;
