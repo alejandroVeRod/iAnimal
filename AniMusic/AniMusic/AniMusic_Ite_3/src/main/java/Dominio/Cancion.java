@@ -1,6 +1,5 @@
 package Dominio;
 
-import Persistencia.GestorAlbum;
 import Persistencia.GestorCancion;
 
 public class Cancion {
