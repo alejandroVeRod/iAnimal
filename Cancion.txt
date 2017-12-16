@@ -1,0 +1,69 @@
+public class Cancion {
+
+	private int idCancion ;
+	private String nombre;
+	private String duracion;
+	private int album;
+	private String colaboracion;
+	private double precio;
+
+	public cancion(int idCancion, String nombre, String duracion, int album, String colaboracion, Double precio) {
+		this.idCancion = idCancion;
+		this.nombre = nombre;
+		this.duracion = duracion;
+		this.album = album;
+		this.colaboracion = colaboracion;
+		this.precio = precio;
+	}
+
+	public int getID() {
+		return idCancion;
+	}
+	public void setID(int id) {
+		idCancion = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nom) {
+		nombre = nom;
+	}
+
+	public String getDuracion() {
+		return duracion;
+	}
+	public void setEmail(String don) {
+		duracion = don;
+	}
+
+	public int getAlbum() {
+		return album;
+	}
+	public void setAlbum(int alb) {
+		album = alb;
+	}
+
+	public String getColaboracion() {
+		return colaboracion;
+	}
+	public void setDNI(String colabo) {
+		colaboracion = colabo;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+	public void setAlbum(double pre) {
+		precio = pre;
+	}
+
+	public Cancion buscarCancion(int id) {
+		return mostrar(id);
+	}
+
+	public boolean comprarCancion(int idUsuario) {
+		return comprar(idUsuario, idCancion);
+	}
+	
+}
