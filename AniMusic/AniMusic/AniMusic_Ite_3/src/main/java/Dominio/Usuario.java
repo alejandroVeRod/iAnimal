@@ -1,5 +1,7 @@
 package Dominio;
 
+import java.sql.SQLException;
+
 import Persistencia.GestorUsuarios;
 
 public class Usuario {
@@ -78,7 +80,7 @@ public class Usuario {
 		GestorUsuarios gus = new GestorUsuarios();
 		gus.autenticarUsuario(user);	
 	}
-	public void leerUsuario(Usuario user) {
+	public void leerUsuario(Usuario user) throws SQLException {
 		GestorUsuarios gus = new GestorUsuarios();
 		gus.verUsuario(user);
 	}	

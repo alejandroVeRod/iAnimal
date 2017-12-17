@@ -5,15 +5,12 @@ import java.sql.*;
 public class AgenteBD {
  
     private Connection conexion=null;
-	@SuppressWarnings("unused")
 	private String servidor="localhost:3306";
-    @SuppressWarnings("unused")
 	private String database="animusic";
-    @SuppressWarnings("unused")
 	private String usuario="root";
-    @SuppressWarnings("unused")
 	private String password="1234";
     private String url="";
+    private Statement st;
  
     public void Clase_Conexion(String servidor, String database, String usuario, String password){
         try {
@@ -36,21 +33,15 @@ public class AgenteBD {
     }
  
     public Connection getConexion(){
-        return conexion;
-    }
- 
-    public Connection cerrarConexion(){
-        try {
-            conexion.close();
-             System.out.println("Conexión Cerrada con "+url);
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-        conexion=null;
-        return conexion;
-    }
-    public Connection seleccionarUsuario() { 
-
+        if(conexion == null) {
     	return conexion;
+        }
+        return null;
+    }
+    public ResultSet leer(String sql) throws SQLException {
+    	return st.executeQuery(sql);
+    }
+    public int modificar(String sql) throws SQLException{
+    	return st.executeUpdate(sql);
     }
 }

@@ -5,7 +5,6 @@ import Dominio.Usuario;
 public class GestorUsuarios {
 
 	private Usuario[] lista_usuario;
-	
 	public Usuario[] getLista_usuario() {
 		return lista_usuario;
 	}
@@ -14,7 +13,7 @@ public class GestorUsuarios {
 		this.lista_usuario = lista_usuario;
 	}
 	public void verUsuario(Usuario user) {
-		
+
 	}
 	public void anadirUsuario(Usuario user) {
 		
