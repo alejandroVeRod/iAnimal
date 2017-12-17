@@ -11,6 +11,7 @@ public class Cancion {
 	private String fecha;
 	private String duracion;
 	
+	
 	public Cancion(String idCancion, String nombre, String artista, String album, String fecha, String duracion){
 		this.idCancion = idCancion;
 		this.nombre = nombre;

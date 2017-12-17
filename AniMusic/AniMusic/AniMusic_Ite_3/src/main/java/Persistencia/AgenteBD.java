@@ -49,4 +49,8 @@ public class AgenteBD {
         conexion=null;
         return conexion;
     }
+    public Connection seleccionarUsuario() { 
+
+    	return conexion;
+    }
 }

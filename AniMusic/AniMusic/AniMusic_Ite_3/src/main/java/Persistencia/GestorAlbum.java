@@ -1,15 +1,10 @@
 package Persistencia;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import Dominio.Album;
 
 public class GestorAlbum {
 	
 	private Album[] lista_album;
-	private PrintWriter pw;
 
 	public Album[] getLista_album() {
 		return lista_album;
@@ -25,8 +20,9 @@ public class GestorAlbum {
 	public void verAlbum(Album alb) {
 		
 	}
-	public boolean anadirAlbum(Album alb) {
-		try {
+	public void anadirAlbum(Album alb) {
+	/*	No es funcional ya que usaremos sentencias sql y una base de datos MySQL
+	 * try {
 			FileWriter fw = new FileWriter("BBDD.txt",true);
 			pw = new PrintWriter (fw);
 			pw.println(alb.getIdAlbum());
@@ -38,7 +34,7 @@ public class GestorAlbum {
 			e.printStackTrace();
 		}
 		return false;
-		
+	*/	
 	}
 	public void modificarAlbum(Album alb) {
 		
