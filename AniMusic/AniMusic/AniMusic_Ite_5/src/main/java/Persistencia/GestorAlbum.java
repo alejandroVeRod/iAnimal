@@ -31,7 +31,7 @@ public class GestorAlbum {
 		agente.mandarModificar("INSERT INTO Album VALUES ('"+ alb.getIdAlbum()+"'"+alb.getNombre()+"'"+alb.getArtista()+"'"+alb.getFecha()+"'");
 	}
 	public void modificarAlbum(Album alb) {
-		
+		agente.mandarModificar("UPDATE Album SET idAlbum"+alb.getIdAlbum());
 	}
 	public void eliminarAlbum(Album alb) {
 		agente.mandarModificar("DELETE FROM Album WHERE idAlbum = "+alb.getIdAlbum());
