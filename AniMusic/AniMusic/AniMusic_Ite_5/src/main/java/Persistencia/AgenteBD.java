@@ -49,4 +49,11 @@ public class AgenteBD {
         conexion=null;
         return conexion;
     }
+    public int modificar(String sql) {
+    	//Prueba
+    	return 1;
+    }
+    public int mandarModificar(String sql) {
+    	return modificar(sql);
+    }
 }
