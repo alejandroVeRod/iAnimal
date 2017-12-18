@@ -41,7 +41,8 @@ public class GestorUsuarios {
 		return true;
 	}
 	public boolean autenticarUsuario(Usuario user) {
-			java.sql.Connection con=null;
+		/*	
+		java.sql.Connection con=null;
 			java.sql.PreparedStatement consulta;
 			ResultSet resultado;
 			String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
@@ -51,16 +52,19 @@ public class GestorUsuarios {
 				consulta=con.prepareStatement("SELECT contrasena FROM Usuario WHERE email="+user.getEmail());
 				resultado=consulta.executeQuery();
 				if(user.getPassword().equals(resultado.next())) {
+				*/
 					return true;
+					/*
 				}else {
 					return false;
 				}
-				
+				*/
+				/*
 			}catch(SQLException ex) {
 				System.out.println("SQLException"+ex.getMessage());
 			}
 			return false;
-		
+		*/
 	}
 	public void conectarBD() {
 		AgenteBD agente=new AgenteBD();
