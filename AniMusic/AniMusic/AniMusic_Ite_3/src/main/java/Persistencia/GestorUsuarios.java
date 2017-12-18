@@ -1,7 +1,11 @@
 package Persistencia;
 
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 import Dominio.Usuario;
 
@@ -27,17 +31,40 @@ public class GestorUsuarios {
 			user.setEmail((String) rs.getObject("email"));
 		}
 	}
-	public void anadirUsuario(Usuario user) {
-		
+	public boolean anadirUsuario(Usuario user) {
+		return true;
 	}
 	public void modificarUsuario(Usuario user) {
 		
 	}
-	public void eliminarUsuario(Usuario user) {
-	
+	public boolean eliminarUsuario(Usuario user) {
+		return true;
 	}
-	public void autenticarUsuario(Usuario user) {
-
+	public boolean autenticarUsuario(Usuario user) {
+			java.sql.Connection con=null;
+			java.sql.PreparedStatement consulta;
+			ResultSet resultado;
+			String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+			try {
+				
+				con=DriverManager.getConnection(connectionString);;
+				consulta=con.prepareStatement("SELECT contrasena FROM Usuario WHERE email="+user.getEmail());
+				resultado=consulta.executeQuery();
+				if(user.getPassword().equals(resultado.next())) {
+					return true;
+				}else {
+					return false;
+				}
+				
+			}catch(SQLException ex) {
+				System.out.println("SQLException"+ex.getMessage());
+			}
+			return false;
+		
+	}
+	public void conectarBD() {
+		AgenteBD agente=new AgenteBD();
+		agente.conexion();
 	}
 	
 }

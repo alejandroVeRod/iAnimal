@@ -14,12 +14,14 @@ public class AgenteBD {
  
     public void Clase_Conexion(String servidor, String database, String usuario, String password){
         try {
- 
+        	Class.forName("com.mysql.jdbc.Driver").newInstance();
+        	System.out.println("Registro completo");
             this.servidor = servidor;
             this.database = database;
- 
+            Connection con=null;
+            
             Class.forName("com.mysql.jdbc.Driver");
-            url="jdbc:mysql://"+servidor+"/"+database;
+            url="jdbc:mysql://localhost:3306/AniMusic";
             conexion=DriverManager.getConnection(url, usuario, password);
             System.out.println("Conexión Correcta con la Base de Datos " + url);
  
@@ -29,9 +31,33 @@ public class AgenteBD {
         }
         catch (ClassNotFoundException ex) {
             System.out.println(ex);
-        }
+        } catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
  
+    public void conexion() {
+    	try {
+    		Class.forName("com.mysql.jdbc.Driver").newInstance();
+    		System.out.println("Registro completo");
+    		
+    	}catch(Exception e) {
+    		System.out.println(e.getMessage());
+    	}
+    	
+    	Connection con=null;
+    	try {
+    		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AniMusic","root","");
+    		con.close();
+    	}catch(SQLException ex) {
+    		System.out.println("SQLException: "+ex.getMessage());
+    	}
+    }
+    
     public Connection getConexion(){
         if(conexion == null) {
     	return conexion;
