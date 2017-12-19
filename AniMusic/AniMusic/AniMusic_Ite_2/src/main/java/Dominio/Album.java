@@ -2,7 +2,7 @@ package Dominio;
 
 
 public class Album {
-	
+	/*Clase album*/
 	private String idAlbum;
 	private String nombre;
 	private String artista;
