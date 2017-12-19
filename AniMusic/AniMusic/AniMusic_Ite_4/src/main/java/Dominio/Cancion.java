@@ -10,7 +10,7 @@ public class Cancion {
 	private String album;
 	private String fecha;
 	private String duracion;
-	
+	private GestorCancion gestor;
 	public Cancion(String idCancion, String nombre, String artista, String album, String fecha, String duracion){
 		this.idCancion = idCancion;
 		this.nombre = nombre;
@@ -18,6 +18,15 @@ public class Cancion {
 		this.album = album;
 		this.fecha = fecha;
 		this.duracion = duracion;
+	}
+	/*Este constructor servirá para poder realizar la busqueda por nombre o por artista*/
+	public Cancion(String nombre_artista) {
+		this.nombre=nombre_artista;
+		this.artista=nombre_artista;
+		this.gestor=new GestorCancion();
+	}
+	public GestorCancion getGestor() {
+		return this.gestor;
 	}
 	
 	public String getIdCancion() {
@@ -67,26 +76,6 @@ public class Cancion {
 	public void setDuracion(String duracion) {
 		this.duracion = duracion;
 	}
-	/*********************** METODOS DE GESTIÓN DE CANCIONES ****************************/
-	public void leerCanciones() {
-		GestorCancion gCan = new GestorCancion();
-		gCan.verTodasCanciones();
-	}
-	public void leerCancion(Cancion song) {
-		GestorCancion gCan = new GestorCancion();
-		gCan.verCancion(song);
-	}
-	public void crearCancion(Cancion song) {
-		GestorCancion gCan = new GestorCancion();
-		gCan.anadirCancion(song);
-	}
-	public void borrarCancion(Cancion song) {
-		GestorCancion gCan = new GestorCancion();
-		gCan.eliminarCancion(song);
-	}
-	public void cambiarCancion(Cancion song) {
-		GestorCancion gCan = new GestorCancion();
-		gCan.modificarCancion(song);
-	}
+
 	
 }

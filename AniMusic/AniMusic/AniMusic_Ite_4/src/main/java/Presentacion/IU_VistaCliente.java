@@ -9,6 +9,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
+
+import Dominio.Cancion;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.border.EtchedBorder;
@@ -142,7 +145,11 @@ public class IU_VistaCliente extends JFrame {
 	}
 	private class Btn_BuscarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			/*IMPLEMENTACION EN IT4*/
+			Cancion c1=new Cancion(txt_Buscador.getText());
+			c1.getGestor().buscarCancion(c1);
+			/*Muestra el contenido de cancion en una JList
+			 * Falta hacer la busqueda por album, pero es solo hacer las llamadas
+			 */
 		}
 	}
 }

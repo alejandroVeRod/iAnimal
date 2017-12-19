@@ -1,22 +1,49 @@
 package Persistencia;
 
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import Dominio.Cancion;
 
 public class GestorCancion {
-	private Cancion[] lista_cancion;
-	
-	public Cancion[] getLista_cancion() {
-		return lista_cancion;
+	private ArrayList<Cancion> lista_canciones;
+	public GestorCancion() {
+		lista_canciones=new ArrayList<Cancion>();
+	}
+	public ArrayList<Cancion> getLista_cancion() {
+		return lista_canciones;
 	}
 
-	public void setLista_cancion(Cancion[] lista_cancion) {
-		this.lista_cancion = lista_cancion;
+	public void setLista_cancion(ArrayList<Cancion> lista_canciones) {
+		this.lista_canciones = lista_canciones;
 	}
 	public void verTodasCanciones() {
 		
 	}
 	public void verCancion(Cancion song) {
 		
+	}
+	public boolean buscarCancion(Cancion song) {
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		try {
+			con = DriverManager.getConnection(connectionString);
+			java.sql.PreparedStatement stmt = con.prepareStatement("SELECT * FROM Cancion WHERE nombre="+song.getNombre()+" OR artista="+song.getArtista());
+	    	resultado = stmt.executeQuery();
+	    	while(resultado.next()) {
+	    		song.setNombre(resultado.getString(1));
+	    		song.setArtista(resultado.getString(2));
+	    		lista_canciones.add(song);
+	    		return true;
+	    	}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		return false;
 	}
 	public boolean anadirCancion(Cancion song) {
 		/*

@@ -3,23 +3,46 @@ package Persistencia;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Dominio.Album;
 
 public class GestorAlbum {
 	
-	private Album[] lista_album;
+	private ArrayList<Album> lista_album;
 
-	public Album[] getLista_album() {
+	public ArrayList<Album> getLista_album() {
 		return lista_album;
 	}
 
-	public void setLista_album(Album[] lista_album) {
+	public void setLista_album(ArrayList<Album> lista_album) {
 		this.lista_album = lista_album;
 	}
 	
+	
 	public void verTodosAlbumes() {
 		
+	}
+public boolean buscarAlbum(Album alb) {
+		
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		try {
+			con = DriverManager.getConnection(connectionString);
+			java.sql.PreparedStatement stmt = con.prepareStatement("SELECT * FROM Album WHERE nombre="+alb.getNombre()+" OR artista="+alb.getArtista());
+	    	resultado = stmt.executeQuery();
+	    	while(resultado.next()) {
+	    		alb.setNombre(resultado.getString(1));
+	    		alb.setArtista(resultado.getString(2));
+	    		lista_album.add(alb);
+	    		return true;
+	    	}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		return false;
 	}
 	public boolean verAlbum(Album alb) {
 		/*java.sql.Connection con=null;
@@ -34,7 +57,7 @@ public class GestorAlbum {
 			while(resultado.next()) {
 				alb.setNombre((String) resultado.getObject("nombre"));
 				alb.setArtista((String) resultado.getObject("artista"));
-				user.setFecha((String) resultado.getObject("fecha"));
+				alb.setFecha((String) resultado.getObject("fecha"));
 				
 			}
 			*/

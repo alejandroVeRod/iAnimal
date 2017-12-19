@@ -34,7 +34,7 @@ public class GestorAlbum {
 			while(resultado.next()) {
 				alb.setNombre((String) resultado.getObject("nombre"));
 				alb.setArtista((String) resultado.getObject("artista"));
-				user.setFecha((String) resultado.getObject("fecha"));
+				alb.setFecha((String) resultado.getObject("fecha"));
 				
 			}
 			*/

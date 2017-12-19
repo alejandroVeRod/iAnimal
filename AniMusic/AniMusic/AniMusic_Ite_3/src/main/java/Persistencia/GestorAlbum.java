@@ -3,24 +3,26 @@ package Persistencia;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Dominio.Album;
 
 public class GestorAlbum {
 	
-	private Album[] lista_album;
+	private ArrayList<Album> lista_album;
 
-	public Album[] getLista_album() {
+	public ArrayList<Album> getLista_album() {
 		return lista_album;
 	}
 
-	public void setLista_album(Album[] lista_album) {
+	public void setLista_album(ArrayList<Album> lista_album) {
 		this.lista_album = lista_album;
 	}
 	
 	public void verTodosAlbumes() {
 		
 	}
+	
 	public boolean verAlbum(Album alb) {
 		/*java.sql.Connection con=null;
 		java.sql.PreparedStatement consulta;
@@ -34,7 +36,7 @@ public class GestorAlbum {
 			while(resultado.next()) {
 				alb.setNombre((String) resultado.getObject("nombre"));
 				alb.setArtista((String) resultado.getObject("artista"));
-				user.setFecha((String) resultado.getObject("fecha"));
+				alb.setFecha((String) resultado.getObject("fecha"));
 				
 			}
 			*/
