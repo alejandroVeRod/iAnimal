@@ -25,6 +25,7 @@ public class Usuario {
 		this.apellidos = apellidos;
 		this.email = email;
 		this.password = password;
+		this.gestor=new GestorUsuarios();
 	}
 	
 	public GestorUsuarios getGestor() {
@@ -73,25 +74,6 @@ public class Usuario {
 		this.DNI = dNI;
 	}
 	
-	public void autenticarUsuario(Usuario user) {
-		GestorUsuarios gus = new GestorUsuarios();
-		gus.autenticarUsuario(user);	
-	}
-	public void leerUsuario(Usuario user) {
-		GestorUsuarios gus = new GestorUsuarios();
-		gus.verUsuario(user);
-	}	
-	public void crearUsuario(Usuario user) {
-		GestorUsuarios gus = new GestorUsuarios();
-		gus.anadirUsuario(user);	
-	}
-	public void borrarUsuario(Usuario user) {
-		GestorUsuarios gus = new GestorUsuarios();
-		gus.eliminarUsuario(user);	
-	}
-	public void cambiarUsuario(Usuario user) {
-		GestorUsuarios gus = new GestorUsuarios();
-		gus.modificarUsuario(user);
-	}
+
 }
 
