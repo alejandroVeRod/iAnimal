@@ -49,7 +49,24 @@ public class GestorUsuarios {
 		
 	
 	public boolean anadirUsuario(Usuario user) {
-		return true;
+		/*java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		
+
+		try {
+			con = DriverManager.getConnection(connectionString);
+			java.sql.PreparedStatement stmt = con.prepareStatement("INSERT INTO 'AniMusic'.'Usuarios'(nombre,apellidos,email,contrasena) VALUES ('"+user.getNombre()+"','"+user.getApellidos()+"','"+user.getEmail()+"','"+user.getPassword()+"')");
+	    	resultado = stmt.executeQuery();
+	    	*/
+	    	return true;
+	    	/*
+	} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return false;*/
 	}
 	public void modificarUsuario(Usuario user) {
 		

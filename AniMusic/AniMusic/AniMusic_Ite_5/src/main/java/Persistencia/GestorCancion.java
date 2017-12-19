@@ -18,13 +18,63 @@ public class GestorCancion {
 	public void verCancion(Cancion song) {
 		
 	}
-	public void anadirCancion(Cancion song) {
+	public boolean anadirCancion(Cancion song) {
+		/*
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		
+
+		try {
+			con = DriverManager.getConnection(connectionString);
+			java.sql.PreparedStatement stmt = con.prepareStatement("INSERT INTO 'Cancion'(nombre,artista,fecha) VALUES ('"+alb.getNombre()+"','"+alb.getArtista()+"','"+alb.getFecha()+"')");
+	    	resultado = stmt.executeQuery();
+	    	*/
+	    	return true;
+	    	/*
+	    	
+	} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return false;*/
 		
 	}
-	public void modificarCancion(Cancion song) {
-		
+	public boolean modificarCancion(Cancion song) {
+		/*
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		try {
+			con = DriverManager.getConnection(connectionString);
+			java.sql.PreparedStatement stmt = con.prepareStatement("UPDATE 'AniMusic'.'Album' SET nombre="+alb.getNombre()+",artista="+alb.getArtista()+",fecha="+alb.getFecha()+" WHERE nombre="+alb.getNombre());
+	    	resultado = stmt.executeQuery();
+	    	*/return true;/*
+		}catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return false;
+		*/
 	}
-	public void eliminarCancion(Cancion song) {
-		
+	public boolean eliminarCancion(Cancion song) {
+		/*
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString = "jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		try {
+			con = DriverManager.getConnection(connectionString);
+			java.sql.PreparedStatement stmt = con.prepareStatement("DELETE * FROM Album WHERE nombre="+alb.getNombre());
+	    	resultado = stmt.executeQuery();
+	    	*/return true;/*
+		}catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return false;
+		*/
 	}
 }
