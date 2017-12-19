@@ -26,7 +26,6 @@ public class GestorUsuarios {
 		ResultSet resultado;
 		String connectionString="jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
 		try {
-
 			con=DriverManager.getConnection(connectionString);;
 			consulta=con.prepareStatement("SELECT * FROM Usuario WHERE email="+user.getEmail());
 			resultado=consulta.executeQuery();
