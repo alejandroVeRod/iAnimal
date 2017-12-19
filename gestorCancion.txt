@@ -1,0 +1,18 @@
+
+public class gestorCancion{
+
+	public boolean comprar(id, usuario) {
+		sentencia = "INSERT INTO compras (id_cancion, usuario) VALUES ("+ id +","+ usuario +")";
+		return accesoBD(sentencia);
+	}
+
+	public Cancion buscar(id) {
+		String nombre = cargarBD("SELECT nombre FROM canciones WHERE (id_cancion = id)");
+		String duracion = cargarBD("SELECT duracion FROM canciones WHERE (id_cancion = id)");
+		int album = cargarBD("SELECT album FROM canciones WHERE (id_cancion = id)");
+		String colaboracion = cargarBD("SELECT colaboracion FROM canciones WHERE (id_cancion = id)");
+		double precio = cargarBD("SELECT precio FROM canciones WHERE (id_cancion = id)");
+		return cancion(id, nombre, duracion, album, colaboracion, precio);
+	}
+
+}

@@ -1,0 +1,16 @@
+
+public class gestorAlbum{
+
+	public boolean comprar(id, usuario) {
+		sentencia = "INSERT INTO compras (id_album, usuario) VALUES ("+ id +","+ usuario +")";
+		return accesoBD(sentencia);
+	}
+
+	public Album buscar(id) {
+		String titulo = cargarBD("SELECT titulo FROM albumes WHERE (id_album = id)");
+		String autor = cargarBD("SELECT autor FROM albumes WHERE (id_album = id)");
+		double precio = cargarBD("SELECT precio FROM albumes WHERE (id_album = id)");
+		return album(id, titulo, autor, precio);
+	}
+
+}

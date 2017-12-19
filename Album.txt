@@ -1,0 +1,51 @@
+public class Album {
+
+	private int idAlbum;
+	private String titulo;
+	private String autor;
+	private double precio;
+
+	public cancion(int idAlbum, String titulo, String autor, double precio) {
+		this.idAlbum = idAlbum;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.precio = precio;
+	}
+
+	public int getID() {
+		return idAlbum;
+	}
+	public void setID(int id) {
+		idAlbum = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String tit) {
+		titulo = tit;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+	public void setAutor(String aut) {
+		autor = aut;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double pre) {
+		precio = pre;
+	}
+
+	public Album buscarAlbum(int id) {
+		return mostrar(id);
+	}
+
+	public boolean comprarAlbum(int idUsuario) {
+		return comprar(idUsuario, idAlbum);
+	}
+	
+}
