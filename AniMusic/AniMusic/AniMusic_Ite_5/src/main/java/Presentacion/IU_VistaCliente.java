@@ -9,6 +9,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
+
+import Dominio.Cancion;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.border.EtchedBorder;
@@ -31,6 +34,7 @@ public class IU_VistaCliente extends JFrame {
 	private JButton btn_Reproducir;
 	private JLabel lblNombre;
 	private JLabel lblArtista;
+	private JLabel labelRepro;
 	private JTextField txt_Nombre;
 	private JTextField txt_Artista;
 	private JButton btn_Pausar;
@@ -125,12 +129,17 @@ public class IU_VistaCliente extends JFrame {
 		btn_Buscar.addActionListener(new Btn_BuscarActionListener());
 		btn_Buscar.setBounds(225, 338, 117, 29);
 		pnl_Contenido.add(btn_Buscar);
+		
+		JLabel labelRepro = new JLabel("");
+		labelRepro.setBounds(445, 41, 162, 38);
+		pnl_Contenido.add(labelRepro);
 	}
 
 	private class Btn_ReproducirActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			((CardLayout)pnl_Reproductor.getLayout()).show(pnl_Reproductor,"Pausar");
-			//Cancion c1=new Cancion(txt_Nombre.getText(),txt_Artista.getText())
+			Cancion c1=new Cancion(txt_Nombre.getText(),txt_Artista.getText());
+			labelRepro.setText("Canción "+c1.getNombre()+" reproduciéndose");
 			/*IMPLEMENTACION EN IT5*/
 		}
 	}

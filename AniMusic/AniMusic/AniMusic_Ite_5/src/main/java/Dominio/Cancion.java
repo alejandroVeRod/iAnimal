@@ -10,6 +10,7 @@ public class Cancion {
 	private String album;
 	private String fecha;
 	private String duracion;
+	private GestorCancion gestor;
 	
 	public Cancion(String idCancion, String nombre, String artista, String album, String fecha, String duracion){
 		this.idCancion = idCancion;
@@ -18,6 +19,11 @@ public class Cancion {
 		this.album = album;
 		this.fecha = fecha;
 		this.duracion = duracion;
+	}
+	public Cancion(String nombre, String artista) {
+		this.nombre=nombre;
+		this.artista=artista;
+		this.gestor=new GestorCancion();
 	}
 	
 	public String getIdCancion() {
