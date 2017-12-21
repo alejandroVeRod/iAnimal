@@ -95,7 +95,7 @@ public class GestorCancion {
 			resultado=consulta.executeQuery();
 			while(resultado.next()) {
 				can.setNombre((String) resultado.getObject("nombre"));
-				can.setArtista((String) resultado.getObject("apellidos"));
+				can.setArtista((String) resultado.getObject("artista"));
 				
 			}
 			return true;

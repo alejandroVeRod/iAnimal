@@ -120,7 +120,7 @@ public class GestorAlbum {
 			resultado=consulta.executeQuery();
 			while(resultado.next()) {
 				alb.setNombre((String) resultado.getObject("nombre"));
-				alb.setArtista((String) resultado.getObject("apellidos"));
+				alb.setArtista((String) resultado.getObject("artista"));
 				
 			}
 			return true;
