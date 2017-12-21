@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Dominio.Album;
+import Dominio.Cancion;
 
 public class GestorAlbum {
 	
@@ -106,5 +107,27 @@ public class GestorAlbum {
 		}
 		return false;
 		*/
+	}
+	public boolean reproducirAlbum(Album alb) {
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString="jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		try {
+
+			con=DriverManager.getConnection(connectionString);;
+			consulta=con.prepareStatement("SELECT * FROM Album WHERE nombre="+alb.getNombre());
+			resultado=consulta.executeQuery();
+			while(resultado.next()) {
+				alb.setNombre((String) resultado.getObject("nombre"));
+				alb.setArtista((String) resultado.getObject("apellidos"));
+				
+			}
+			return true;
+		
+		}catch(SQLException ex) {
+			System.out.println("SQLException"+ex.getMessage());
+		}
+		return false;
 	}
 }

@@ -146,6 +146,8 @@ public class IU_VistaCliente extends JFrame {
 	private class Btn_PausarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			((CardLayout)pnl_Reproductor.getLayout()).show(pnl_Reproductor,"Reproducir");
+			//Cancion c1=new Cancion(txt_Nombre.getText(),txt_Artista.getText());
+			labelRepro.setText("");
 			/*IMPLEMENTACION EN IT5*/
 		}
 	}

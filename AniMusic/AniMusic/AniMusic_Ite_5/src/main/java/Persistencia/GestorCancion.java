@@ -1,7 +1,13 @@
 package Persistencia;
 
 import Dominio.Cancion;
-
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+/*
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+*/
 public class GestorCancion {
 	private Cancion[] lista_cancion;
 	
@@ -76,5 +82,27 @@ public class GestorCancion {
 		}
 		return false;
 		*/
+	}
+	public boolean reproducirCancion(Cancion can) {
+		java.sql.Connection con=null;
+		java.sql.PreparedStatement consulta;
+		ResultSet resultado;
+		String connectionString="jdbc:mysql://localhost:3306/AniMusic.mwb?user=root&password=Pass&useUnicode=true&characterEncoding=UTF-8";
+		try {
+
+			con=DriverManager.getConnection(connectionString);;
+			consulta=con.prepareStatement("SELECT * FROM Cancion WHERE nombre="+can.getNombre());
+			resultado=consulta.executeQuery();
+			while(resultado.next()) {
+				can.setNombre((String) resultado.getObject("nombre"));
+				can.setArtista((String) resultado.getObject("apellidos"));
+				
+			}
+			return true;
+		
+		}catch(SQLException ex) {
+			System.out.println("SQLException"+ex.getMessage());
+		}
+		return false;
 	}
 }
