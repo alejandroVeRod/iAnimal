@@ -19,6 +19,11 @@ public class Cancion {
 		this.fecha = fecha;
 		this.duracion = duracion;
 	}
+	public Cancion(String nombre, String artista) {
+		this.nombre=nombre;
+		this.artista=artista;
+		this.gestor=new GestorCancion();
+	}
 	/*Este constructor servirá para poder realizar la busqueda por nombre o por artista*/
 	public Cancion(String nombre_artista) {
 		this.nombre=nombre_artista;

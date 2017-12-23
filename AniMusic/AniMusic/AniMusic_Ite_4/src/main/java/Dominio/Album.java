@@ -15,6 +15,11 @@ public class Album {
 		this.artista = artista;
 		this.fecha = fecha;
 	}
+	public Album(String nombre, String artista) {
+		this.nombre=nombre;
+		this.artista=artista;
+	}
+
 
 	public String getIdAlbum() {
 		return idAlbum;
