@@ -35,10 +35,10 @@ public class TestReproducirAlbum {
 	}
 	@Test
 	public void testCampoVacio() {
-		alb.setNombre("null");
+		alb.setNombre(null);
 		assertFalse(gesalb.reproducirAlbum(alb));
 	}	
-
+	
 	@After
 	public void tearDown() throws Exception {
 	}

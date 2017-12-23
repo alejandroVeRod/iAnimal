@@ -35,7 +35,7 @@ public class TestReproducirCancion {
 	}
 	@Test
 	public void testCampoVacio() {
-		can.setNombre("null");
+		can.setNombre(null);
 		assertFalse(gescan.reproducirCancion(can));
 	}	
 	@After
