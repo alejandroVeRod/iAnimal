@@ -51,7 +51,7 @@ public class GestorAlbum {
 		
 	}
 	public boolean anadirAlbum(Album alb) {
-		/*
+		
 		java.sql.Connection con=null;
 		java.sql.PreparedStatement consulta;
 		ResultSet resultado;
@@ -62,15 +62,15 @@ public class GestorAlbum {
 			con = DriverManager.getConnection(connectionString);
 			java.sql.PreparedStatement stmt = con.prepareStatement("INSERT INTO 'AniMusic'.'Album'(nombre,artista,fecha) VALUES ('"+alb.getNombre()+"','"+alb.getArtista()+"','"+alb.getFecha()+"')");
 	    	resultado = stmt.executeQuery();
-	    	*/
+	    	
 	    	return true;
-	    	/*
+	    	
 	    	
 	} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
-		return false;*/
+		return false;
 		
 	}
 	public boolean modificarAlbum(Album alb) {
