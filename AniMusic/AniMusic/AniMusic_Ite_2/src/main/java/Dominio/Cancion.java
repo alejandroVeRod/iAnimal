@@ -1,5 +1,7 @@
 package Dominio;
 
+import Persistencia.GestorCancion;
+import Persistencia.GestorUsuarios;
 
 public class Cancion {
 	
@@ -10,6 +12,8 @@ public class Cancion {
 	private String fecha;
 	private String duracion;
 	
+	public GestorCancion gestor;
+	
 	public Cancion(String idCancion, String nombre, String artista, String album, String fecha, String duracion){
 		this.idCancion = idCancion;
 		this.nombre = nombre;
@@ -17,6 +21,12 @@ public class Cancion {
 		this.album = album;
 		this.fecha = fecha;
 		this.duracion = duracion;
+		this.gestor=new GestorCancion();
+	}
+	public Cancion (String nombre,String artista) {
+		this.nombre=nombre;
+		this.artista=artista;
+		this.gestor=new GestorCancion();
 	}
 	
 	public String getIdCancion() {

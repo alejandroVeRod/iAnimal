@@ -11,7 +11,6 @@ import Dominio.Usuario;
 public class GestorUsuarios {
 
 	private Usuario[] lista_usuario;
-	private PrintWriter pw;
 	
 	public Usuario[] getLista_usuario() {
 		return lista_usuario;
@@ -25,19 +24,23 @@ public class GestorUsuarios {
 	}
 	public boolean anadirUsuario(Usuario user) {
 		//No es funcional, ya que implementaremos más adelante una bbdd
-		try {
+		
+		/*try {
+			
 			FileWriter fw=new FileWriter("BBDD.txt",true);
-			pw = new PrintWriter(fw);
+			PrintWriter pw=new PrintWriter(fw);
 			pw.println(user.getEmail());
 			pw.println(user.getPassword());
 			pw.println(user.getNombre());
 			pw.println(user.getApellidos());
-			
+			pw.close();
+		*/	return true;
+		/*	
 		} catch (IOException e) {
 			
 			e.printStackTrace();
 		}
-		return true;
+		return false;*/
 	}
 	public void modificarUsuario(Usuario user) {
 		
@@ -46,7 +49,7 @@ public class GestorUsuarios {
 	
 	}
 	public boolean autenticarUsuario(Usuario user)   {
-		String pass = null,email = null;
+		/*String pass = null,email = null;
 		try {
 			File f=new File("BBDD.txt");
 			Scanner read = new Scanner(f);
@@ -56,14 +59,15 @@ public class GestorUsuarios {
 			}
 			read.close();
 		}catch (Exception ex){
-			System.out.print("POLLA");
+			ex.printStackTrace();
 		}
 		
 		if((user.getEmail().equals(email)) && (user.getPassword().equals(pass))){
 			return true;
 		}else {
 			return false;
-		}
+		}*/
+		return true;
 	}
 	
 }

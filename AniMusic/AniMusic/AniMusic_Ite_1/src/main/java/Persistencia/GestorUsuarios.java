@@ -24,7 +24,9 @@ public class GestorUsuarios {
 	}
 	public boolean anadirUsuario(Usuario user) {
 		//No es funcional, ya que implementaremos más adelante una bbdd
-		try {
+		
+		/*try {
+			
 			FileWriter fw=new FileWriter("BBDD.txt",true);
 			PrintWriter pw=new PrintWriter(fw);
 			pw.println(user.getEmail());
@@ -32,13 +34,13 @@ public class GestorUsuarios {
 			pw.println(user.getNombre());
 			pw.println(user.getApellidos());
 			pw.close();
-			return true;
-			
+		*/	return true;
+		/*	
 		} catch (IOException e) {
 			
 			e.printStackTrace();
 		}
-		return false;
+		return false;*/
 	}
 	public void modificarUsuario(Usuario user) {
 		
@@ -47,7 +49,7 @@ public class GestorUsuarios {
 	
 	}
 	public boolean autenticarUsuario(Usuario user)   {
-		String pass = null,email = null;
+		/*String pass = null,email = null;
 		try {
 			File f=new File("BBDD.txt");
 			Scanner read = new Scanner(f);
@@ -64,7 +66,8 @@ public class GestorUsuarios {
 			return true;
 		}else {
 			return false;
-		}
+		}*/
+		return true;
 	}
 	
 }

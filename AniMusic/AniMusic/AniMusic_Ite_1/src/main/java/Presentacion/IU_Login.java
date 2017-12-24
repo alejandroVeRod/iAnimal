@@ -17,29 +17,27 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
 public class IU_Login {
 
 	private JFrame frame;
-	private JPanel panel;
+	private JPanel panel_inicioSesion;
 	private JLabel lblAnimusic;
 	private JTextField txt_email;
 	private JLabel lblemail;
 	private JLabel lblNewLabel;
-	private JTextField txt_pass;
-	private JButton btn_IniciarSesion;
-	private JButton btn_Registrarse;
-	private JLabel lblnoTienesCuenta;
-	private JLabel lblNewLabel_1;
-	private JLabel label;
+	private JTextField txt_contrasena;
+	private JButton btnNewButton;
+	private JLabel lblnoTienesUna;
+	private JLabel lblNuevoEmail;
+	private JLabel lblNuevaContrasea;
 	private JLabel lblNombre;
 	private JLabel lblApellidos;
-	private JTextField txt_nuevoEmail;
-	private JTextField txt_nuevoPassword;
-	private JTextField txt_nuevoNombre;
-	private JTextField txt_nuevoApellido;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
+	private JTextField txt_NuevoEmail;
+	private JTextField txt_Nuevocontrasena;
+	private JTextField txt_NuevoNombre;
+	private JTextField txt_Nuevoapellidos;
+	private JButton btnRegistrase;
+	private JButton btnRegistrarseConFacebook;
 
 	/**
 	 * Launch the application.
@@ -69,112 +67,122 @@ public class IU_Login {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 434, 596);
+		frame.setBounds(100, 100, 410, 596);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.CENTER);
-		panel.setLayout(null);
+		panel_inicioSesion = new JPanel();
+		frame.getContentPane().add(panel_inicioSesion, BorderLayout.CENTER);
+		panel_inicioSesion.setLayout(null);
 		
 		lblAnimusic = new JLabel("AniMusic");
 		lblAnimusic.setFont(new Font("Calibri", Font.PLAIN, 31));
 		lblAnimusic.setBounds(29, 45, 178, 75);
-		panel.add(lblAnimusic);
+		panel_inicioSesion.add(lblAnimusic);
 		
 		txt_email = new JTextField();
 		txt_email.setBounds(102, 203, 86, 20);
-		panel.add(txt_email);
+		panel_inicioSesion.add(txt_email);
 		txt_email.setColumns(10);
 		
 		lblemail = new JLabel("email");
 		lblemail.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblemail.setBounds(29, 206, 63, 14);
-		panel.add(lblemail);
+		lblemail.setBounds(46, 206, 46, 14);
+		panel_inicioSesion.add(lblemail);
 		
 		lblNewLabel = new JLabel("Contrase\u00F1a");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setBounds(10, 253, 82, 14);
-		panel.add(lblNewLabel);
+		lblNewLabel.setBounds(6, 253, 86, 14);
+		panel_inicioSesion.add(lblNewLabel);
 		
-		txt_pass = new JTextField();
-		txt_pass.setBounds(102, 250, 86, 20);
-		panel.add(txt_pass);
-		txt_pass.setColumns(10);
+		txt_contrasena = new JTextField();
+		txt_contrasena.setBounds(102, 250, 86, 20);
+		panel_inicioSesion.add(txt_contrasena);
+		txt_contrasena.setColumns(10);
 		
-		btn_IniciarSesion = new JButton("Iniciar Sesion");
-		btn_IniciarSesion.addActionListener(new BtnNewButtonActionListener());
-		btn_IniciarSesion.setBounds(241, 223, 119, 23);
-		panel.add(btn_IniciarSesion);
+		btnNewButton = new JButton("Iniciar Sesion");
+		btnNewButton.addActionListener(new BtnNewButtonActionListener());
+		btnNewButton.setBounds(241, 223, 119, 23);
+		panel_inicioSesion.add(btnNewButton);
 		
-		btn_Registrarse = new JButton("Registrarse");
-		btn_Registrarse.addActionListener(new BtnNewButton_1ActionListener());
-		btn_Registrarse.setBounds(88, 341, 105, 23);
-		panel.add(btn_Registrarse);
+		lblnoTienesUna = new JLabel("¿No tienes una cuenta?");
+		lblnoTienesUna.setBounds(29, 313, 151, 16);
+		panel_inicioSesion.add(lblnoTienesUna);
 		
-		lblnoTienesCuenta = new JLabel("\u00BFNo tienes cuenta?");
-		lblnoTienesCuenta.setBounds(78, 315, 178, 14);
-		panel.add(lblnoTienesCuenta);
+		lblNuevoEmail = new JLabel("Nuevo email:");
+		lblNuevoEmail.setBounds(51, 341, 97, 16);
+		panel_inicioSesion.add(lblNuevoEmail);
 		
-		lblNewLabel_1 = new JLabel("Nueva Contrase\u00F1a:");
-		lblNewLabel_1.setBounds(10, 420, 112, 14);
-		panel.add(lblNewLabel_1);
-		
-		label = new JLabel("Nuevo email:");
-		label.setBounds(10, 395, 94, 14);
-		panel.add(label);
+		lblNuevaContrasea = new JLabel("Nueva contraseña:");
+		lblNuevaContrasea.setBounds(29, 369, 119, 16);
+		panel_inicioSesion.add(lblNuevaContrasea);
 		
 		lblNombre = new JLabel("Nombre:");
-		lblNombre.setBounds(230, 395, 46, 14);
-		panel.add(lblNombre);
+		lblNombre.setBounds(87, 397, 61, 16);
+		panel_inicioSesion.add(lblNombre);
 		
 		lblApellidos = new JLabel("Apellidos:");
-		lblApellidos.setBounds(230, 420, 46, 14);
-		panel.add(lblApellidos);
+		lblApellidos.setBounds(77, 425, 71, 16);
+		panel_inicioSesion.add(lblApellidos);
 		
-		txt_nuevoEmail = new JTextField();
-		txt_nuevoEmail.setBounds(121, 392, 86, 20);
-		panel.add(txt_nuevoEmail);
-		txt_nuevoEmail.setColumns(10);
+		txt_NuevoEmail = new JTextField();
+		txt_NuevoEmail.setBounds(241, 336, 130, 26);
+		panel_inicioSesion.add(txt_NuevoEmail);
+		txt_NuevoEmail.setColumns(10);
 		
-		txt_nuevoPassword = new JTextField();
-		txt_nuevoPassword.setBounds(121, 417, 86, 20);
-		panel.add(txt_nuevoPassword);
-		txt_nuevoPassword.setColumns(10);
+		txt_Nuevocontrasena = new JTextField();
+		txt_Nuevocontrasena.setBounds(241, 364, 130, 26);
+		panel_inicioSesion.add(txt_Nuevocontrasena);
+		txt_Nuevocontrasena.setColumns(10);
 		
-		txt_nuevoNombre = new JTextField();
-		txt_nuevoNombre.setBounds(286, 392, 86, 20);
-		panel.add(txt_nuevoNombre);
-		txt_nuevoNombre.setColumns(10);
+		txt_NuevoNombre = new JTextField();
+		txt_NuevoNombre.setBounds(241, 392, 130, 26);
+		panel_inicioSesion.add(txt_NuevoNombre);
+		txt_NuevoNombre.setColumns(10);
 		
-		txt_nuevoApellido = new JTextField();
-		txt_nuevoApellido.setBounds(286, 417, 86, 20);
-		panel.add(txt_nuevoApellido);
-		txt_nuevoApellido.setColumns(10);
+		txt_Nuevoapellidos = new JTextField();
+		txt_Nuevoapellidos.setBounds(241, 420, 130, 26);
+		panel_inicioSesion.add(txt_Nuevoapellidos);
+		txt_Nuevoapellidos.setColumns(10);
 		
-		btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(10, 326, 27, -15);
-		panel.add(btnNewButton);
+		btnRegistrase = new JButton("Registrase");
+		btnRegistrase.addActionListener(new BtnRegistraseActionListener());
+		btnRegistrase.setBounds(243, 468, 117, 29);
+		panel_inicioSesion.add(btnRegistrase);
 		
-		btnNewButton_1 = new JButton("Registrarse con Facebook");
-		btnNewButton_1.setBounds(78, 490, 188, 29);
-		panel.add(btnNewButton_1);
+		btnRegistrarseConFacebook = new JButton("Registrarse con Facebook");
+		btnRegistrarseConFacebook.addActionListener(new BtnRegistrarseConFacebookActionListener());
+		btnRegistrarseConFacebook.setBounds(18, 468, 200, 29);
+		panel_inicioSesion.add(btnRegistrarseConFacebook);
 	}
 	private class BtnNewButtonActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			Usuario user=new Usuario(txt_email.getText(),txt_pass.getText());
-			
-				if((user.getGestor().autenticarUsuario(user))==true) {
-					JOptionPane.showMessageDialog(null,"Bienvenido! "+txt_email.getText());
-				}
-			
+			Usuario u1=new Usuario(txt_email.getText(),txt_contrasena.getText());
+			if(u1.getGestor().autenticarUsuario(u1)) {
+				JOptionPane.showMessageDialog(null, "¡Bienvenido!");
+				
+			}
 			
 		}
 	}
-	private class BtnNewButton_1ActionListener implements ActionListener {
+	private class BtnRegistrarseConFacebookActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			Usuario user=new Usuario(txt_nuevoEmail.getText(),txt_nuevoPassword.getText(),txt_nuevoNombre.getText(),txt_nuevoApellido.getText());
-			if(user.getGestor().anadirUsuario(user)) {
-				JOptionPane.showMessageDialog(null,"Enhorabuena, te has registrado con éxito "+txt_email.getText());
+			Usuario u1=new Usuario(txt_NuevoNombre.getText(),txt_Nuevoapellidos.getText(),txt_NuevoEmail.getText(),txt_Nuevocontrasena.getText());
+			
+			if((u1.getGestor().anadirUsuario(u1)==true)) {
+				
+				JOptionPane.showMessageDialog(null, "Se ha registrado correctamente con Facebook :)");
+			}
+				
+			
+		}
+	}
+	private class BtnRegistraseActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+Usuario u1=new Usuario(txt_NuevoNombre.getText(),txt_Nuevoapellidos.getText(),txt_NuevoEmail.getText(),txt_Nuevocontrasena.getText());
+			
+			if((u1.getGestor().anadirUsuario(u1)==true)) {
+				
+				JOptionPane.showMessageDialog(null, "Se ha registrado correctamente :)");
 			}
 		}
 	}

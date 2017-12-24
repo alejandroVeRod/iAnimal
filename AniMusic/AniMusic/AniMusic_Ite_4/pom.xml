@@ -7,5 +7,6 @@
   </parent>
   <artifactId>AniMusic_Ite_4</artifactId>
   <name>Buscador y Gestion de Compra</name>
-  <version>1.1.0</version>
+  <version>1.2.0-SNAPSHOT</version>
+  <groupId>iAnimal</groupId>
 </project>

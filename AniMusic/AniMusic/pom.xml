@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ISO_2</groupId>
+  <groupId>iAnimal</groupId>
   <artifactId>AniMusic</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -12,4 +12,25 @@
   	<module>AniMusic_Ite_4</module>
   	<module>AniMusic_Ite_5</module>
   </modules>
+  <description>AniMusic es un reproductor de musica online que te permitirá escuchar tus canciones favoritas durante tiempo ilimitado
+</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.mslc.</groupId>
+  		<artifactId>JunitExample</artifactId>
+  		<type>war</type>
+  		<scope>test</scope>
+  	</dependency>
+  </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>com.mslc.</groupId>
+  			<artifactId>JunitExample</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  			<type>war</type>
+  			<scope>test</scope>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
