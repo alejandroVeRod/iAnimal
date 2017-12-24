@@ -20,6 +20,10 @@ public class Album {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Album(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getIdAlbum() {
 		return idAlbum;
 	}

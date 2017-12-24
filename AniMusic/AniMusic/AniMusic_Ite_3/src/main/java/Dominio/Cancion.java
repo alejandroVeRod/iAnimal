@@ -25,6 +25,10 @@ public class Cancion {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Cancion(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getIdCancion() {
 		return idCancion;
 	}
