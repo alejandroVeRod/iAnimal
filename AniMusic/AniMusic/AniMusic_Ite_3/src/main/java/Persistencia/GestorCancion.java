@@ -47,7 +47,7 @@ public class GestorCancion {
 		
 	}
 	public boolean anadirCancion(Cancion song) {
-		/*
+		
 		java.sql.Connection con=null;
 		java.sql.PreparedStatement consulta;
 		ResultSet resultado;
@@ -56,17 +56,22 @@ public class GestorCancion {
 
 		try {
 			con = DriverManager.getConnection(connectionString);
-			java.sql.PreparedStatement stmt = con.prepareStatement("INSERT INTO 'Cancion'(nombre,artista,fecha) VALUES ('"+alb.getNombre()+"','"+alb.getArtista()+"','"+alb.getFecha()+"')");
+			java.sql.PreparedStatement stmt = con.prepareStatement("INSERT INTO 'Cancion'(nombre,artista,album,fecha,duracion) VALUES"
+					+ " ('"+song.getNombre()+
+					"','"+song.getArtista()+
+					"','"+song.getAlbum()+
+					"','"+song.getFecha()+
+					"','"+song.getDuracion()+"')");
 	    	resultado = stmt.executeQuery();
-	    	*/
+	    	
 	    	return true;
-	    	/*
+	    	
 	    	
 	} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
-		return false;*/
+		return false;
 		
 	}
 	public boolean modificarCancion(Cancion song) {

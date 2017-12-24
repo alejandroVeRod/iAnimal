@@ -43,6 +43,9 @@ public class IU_Login {
 	public IU_Login() {
 		initialize();
 	}
+	public JFrame getFrame() {
+		return this.frame;
+	}
 
 	/**
 	 * Initialize the contents of the frame.

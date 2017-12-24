@@ -16,6 +16,10 @@ public class Album {
 		this.fecha = fecha;
 	}
 
+	public Album(String string, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getIdAlbum() {
 		return idAlbum;
 	}
