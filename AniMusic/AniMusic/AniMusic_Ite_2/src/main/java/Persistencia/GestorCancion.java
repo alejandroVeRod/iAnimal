@@ -1,6 +1,7 @@
 package Persistencia;
 
 import Dominio.Cancion;
+import Dominio.Usuario;
 
 public class GestorCancion {
 	private Cancion[] lista_cancion;
@@ -29,5 +30,10 @@ public class GestorCancion {
 	}
 	public void reproducirCancion(Cancion song) {
 		
+	}
+
+	public boolean comprarCancion(Cancion song, Usuario user) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
